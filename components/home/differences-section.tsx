@@ -26,7 +26,7 @@ export function DifferencesSection() {
     <section className="py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 lg:mb-24">
+        <div className="reveal max-w-3xl mb-16 lg:mb-24">
           <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
             Why Choose Us
           </p>
@@ -40,10 +40,10 @@ export function DifferencesSection() {
           {differences.map((item, index) => (
             <div 
               key={index}
-              className="group p-8 lg:p-10 bg-card border border-border hover:border-accent/30 transition-colors"
+              className={`reveal reveal-delay-${index + 1} group p-8 lg:p-10 bg-card border border-border hover:border-accent/30 hover:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)] transition-all duration-500`}
             >
               <div className="mb-6">
-                <item.icon className="h-8 w-8 text-accent" strokeWidth={1.5} />
+                <item.icon className="h-8 w-8 text-accent transition-transform duration-500 group-hover:scale-110" strokeWidth={1.5} />
               </div>
               <h3 className="font-serif text-2xl mb-2">{item.title}</h3>
               <p className="text-sm text-accent mb-4">{item.subtitle}</p>

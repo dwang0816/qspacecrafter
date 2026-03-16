@@ -33,7 +33,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-secondary p-8 lg:p-12">
+    <div className="reveal bg-secondary p-8 lg:p-12">
       <h2 className="font-serif text-3xl lg:text-4xl mb-2">
         Get FREE Consultation
       </h2>
@@ -154,7 +154,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="group w-full flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+          className="btn-shimmer group w-full flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <>

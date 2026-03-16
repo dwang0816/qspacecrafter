@@ -8,10 +8,10 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border nav-animate">
       <nav className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="font-serif text-xl tracking-wide">
+          <Link href="/" className="font-serif text-xl tracking-wide transition-[letter-spacing] duration-500 hover:tracking-widest">
             QSPACE CRAFTER
           </Link>
 
@@ -19,19 +19,19 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-12">
             <Link 
               href="/" 
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="nav-link-underline text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
               Home
             </Link>
             <Link 
               href="/projects" 
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="nav-link-underline text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
               Projects
             </Link>
             <Link 
               href="/contact" 
-              className="text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="nav-link-underline text-sm tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
             >
               Contact
             </Link>
@@ -39,7 +39,7 @@ export function Navigation() {
 
           <Link 
             href="/contact" 
-            className="hidden md:block px-6 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors"
+            className="btn-shimmer hidden md:block px-6 py-3 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors"
           >
             Free Consultation
           </Link>

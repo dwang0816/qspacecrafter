@@ -89,7 +89,7 @@ export function ProjectsGallery() {
     <section className="pb-24 lg:pb-32">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-2 mb-12 lg:mb-16">
+        <div className="reveal flex flex-wrap gap-2 mb-12 lg:mb-16">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -110,9 +110,10 @@ export function ProjectsGallery() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredProjects.map((project, index) => (
             <div 
-              key={project.id}
+              key={`${activeCategory}-${project.id}`}
+              style={{ animationDelay: `${index * 0.07}s` }}
               className={cn(
-                "group cursor-pointer",
+                "gallery-item group cursor-pointer",
                 index % 3 === 1 && "lg:mt-12"
               )}
             >

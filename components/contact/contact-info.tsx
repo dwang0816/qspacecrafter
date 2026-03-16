@@ -2,7 +2,7 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export function ContactInfo() {
   return (
-    <div className="lg:pt-8">
+    <div className="reveal lg:pt-8">
       <h2 className="font-serif text-3xl lg:text-4xl mb-8">
         Let's Connect
       </h2>
@@ -10,7 +10,7 @@ export function ContactInfo() {
       <div className="space-y-8">
         {/* Email */}
         <div className="flex gap-4">
-          <div className="flex-shrink-0 w-12 h-12 bg-secondary flex items-center justify-center">
+          <div className="flex-shrink-0 w-12 h-12 bg-secondary flex items-center justify-center transition-colors duration-300 hover:bg-accent/10">
             <Mail className="h-5 w-5 text-accent" strokeWidth={1.5} />
           </div>
           <div>

@@ -33,7 +33,7 @@ export function ProjectTypesSection() {
     <section className="py-24 lg:py-32 bg-primary text-primary-foreground">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 lg:mb-24">
+        <div className="reveal max-w-3xl mb-16 lg:mb-24">
           <p className="text-sm tracking-[0.3em] uppercase text-primary-foreground/60 mb-4">
             What We Do
           </p>
@@ -48,15 +48,15 @@ export function ProjectTypesSection() {
             <Link 
               key={index}
               href="/projects"
-              className="group block"
+              className={`reveal reveal-delay-${Math.min(index + 1, 4)} group block`}
             >
               <div className="relative aspect-[4/3] mb-6 overflow-hidden bg-primary-foreground/10">
                 <img 
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                 />
-                <div className="absolute top-4 right-4 w-10 h-10 bg-primary-foreground text-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-4 right-4 w-10 h-10 bg-primary-foreground text-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <ArrowUpRight className="h-5 w-5" />
                 </div>
               </div>
