@@ -5,30 +5,29 @@ import useEmblaCarousel from "embla-carousel-react"
 import { useCallback, useEffect, useState } from "react"
 import { ChevronLeft, ChevronRight, MoveHorizontal } from "lucide-react"
 
-// Curated selection from home + gallery — spread across all project batches for variety
 const carouselPhotos = [
-  { src: "/home/fullroom_long.png" },
-  { src: "/gallery/photos/g001.jpg" },
-  { src: "/home/blue%20bathroom.PNG" },
-  { src: "/gallery/photos/g007.jpg" },
-  { src: "/home/kitchen.jpg" },
-  { src: "/gallery/photos/g010.jpg" },
-  { src: "/gallery/photos/g015.jpg" },
-  { src: "/home/bathroom%20shower.jpg" },
-  { src: "/gallery/photos/g018.jpg" },
-  { src: "/gallery/photos/g023.jpg" },
-  { src: "/home/3%20windows.jpg" },
-  { src: "/gallery/photos/g031.jpg" },
-  { src: "/gallery/photos/g034.jpg" },
-  { src: "/gallery/photos/g040.jpg" },
-  { src: "/home/bathoom%20light%20mirror.jpg" },
-  { src: "/gallery/photos/g044.jpg" },
-  { src: "/gallery/photos/g052.jpg" },
-  { src: "/gallery/photos/g056.png" },
-  { src: "/gallery/photos/g059.jpg" },
-  { src: "/gallery/photos/g063.jpg" },
-  { src: "/gallery/photos/g067.jpg" },
-  { src: "/gallery/photos/g070.jpg" },
+  { src: "/home/fullroom_long.png",          label: "Living Room"  },
+  { src: "/gallery/g001.jpg",                label: "Bathroom"     },
+  { src: "/home/blue%20bathroom.PNG",        label: "Bathroom"     },
+  { src: "/gallery/g007.jpg",               label: "Shower"       },
+  { src: "/home/kitchen.jpg",               label: "Kitchen"      },
+  { src: "/gallery/g010.jpg",               label: "Kitchen"      },
+  { src: "/gallery/g015.jpg",               label: "Kitchen"      },
+  { src: "/home/bathroom%20shower.jpg",     label: "Shower"       },
+  { src: "/gallery/g018.jpg",               label: "Cabinetry"    },
+  { src: "/gallery/g023.jpg",               label: "Kitchen"      },
+  { src: "/home/3%20windows.jpg",           label: "Interior"     },
+  { src: "/gallery/g031.jpg",               label: "Full Remodel" },
+  { src: "/gallery/g034.jpg",               label: "Kitchen"      },
+  { src: "/gallery/g040.jpg",               label: "Tile Work"    },
+  { src: "/home/bathoom%20light%20mirror.jpg", label: "Vanity"    },
+  { src: "/gallery/g044.jpg",               label: "Bathroom"     },
+  { src: "/gallery/g052.jpg",               label: "Shower"       },
+  { src: "/gallery/g056.png",               label: "Terrace"      },
+  { src: "/gallery/g059.jpg",               label: "Vanity"       },
+  { src: "/gallery/g063.jpg",               label: "Kitchen"      },
+  { src: "/gallery/g067.jpg",               label: "Staircase"    },
+  { src: "/gallery/g070.jpg",               label: "Bathroom"     },
 ]
 
 export function PhotoCarouselSection() {
@@ -55,17 +54,21 @@ export function PhotoCarouselSection() {
   }, [emblaApi, onSelect])
 
   return (
-    <section className="py-10 lg:py-14 overflow-hidden">
+    <section className="pt-10 pb-10 lg:pt-14 lg:pb-12 overflow-hidden">
       {/* Header */}
-      <div className="container mx-auto px-6 lg:px-12 mb-6">
+      <div className="container mx-auto px-6 lg:px-12 mb-4">
         <div className="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-3">
               Our Portfolio
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl tracking-tight">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl tracking-tight mb-3">
               Featured Work
             </h2>
+            <p className="text-muted-foreground text-sm lg:text-base leading-relaxed max-w-md">
+              From marble-clad bathrooms to full-scale kitchen transformations —
+              every project reflects precision craftsmanship and an eye for detail.
+            </p>
           </div>
 
           <div className="flex flex-col items-start sm:items-end gap-2">
@@ -93,7 +96,7 @@ export function PhotoCarouselSection() {
         </div>
 
         {/* Progress dots */}
-        <div className="flex gap-1.5 mt-4 flex-wrap">
+        <div className="flex gap-1.5 mt-3 flex-wrap">
           {carouselPhotos.map((_, i) => (
             <button
               key={i}
@@ -104,6 +107,19 @@ export function PhotoCarouselSection() {
               aria-label={`Go to photo ${i + 1}`}
             />
           ))}
+        </div>
+      </div>
+
+      {/* Bridge — category index */}
+      <div className="container mx-auto px-6 lg:px-12 mb-4">
+        <div className="border-t border-border pt-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground/50 shrink-0">
+            {carouselPhotos.length} Projects
+          </span>
+          <div className="w-px h-4 bg-border hidden sm:block" />
+          <p className="text-xs tracking-wide text-muted-foreground leading-relaxed">
+            Kitchens · Bathrooms · Showers · Full Remodels · Tile Work · Cabinetry · Vanities · Terraces · Staircases — drag or use the arrows to explore our recent work.
+          </p>
         </div>
       </div>
 
@@ -118,13 +134,22 @@ export function PhotoCarouselSection() {
             >
               <Image
                 src={photo.src}
-                alt={`Project photo ${index + 1}`}
+                alt={`${photo.label} renovation project`}
                 fill
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 sizes="(max-width: 640px) 78vw, 300px"
                 draggable={false}
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
+              {/* Label */}
+              <div className="absolute bottom-0 left-0 right-0 px-4 pb-4">
+                <span className="block text-[10px] tracking-[0.25em] uppercase text-white/50 mb-1">
+                  Project
+                </span>
+                <span className="font-serif text-white text-base italic">
+                  {photo.label}
+                </span>
+              </div>
             </div>
           ))}
           <div className="flex-none w-6 lg:w-12" />
@@ -133,3 +158,4 @@ export function PhotoCarouselSection() {
     </section>
   )
 }
+

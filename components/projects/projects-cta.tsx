@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react"
 
 export function ProjectsCTA() {
   return (
-    <section className="py-24 lg:py-32 bg-secondary">
+    <section className="py-14 lg:py-20 bg-secondary">
       <div className="container mx-auto px-6 lg:px-12 text-center">
         <h2 className="reveal font-serif text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6">
           Ready to Start Your Project?

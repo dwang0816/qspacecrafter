@@ -7,8 +7,8 @@ export function HeroSection() {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Full-screen background photo */}
       <Image
-        src="/home/fullroom_long.png"
-        alt="Beautifully renovated interior space"
+        src="/home/hero-unsplash.jpg"
+        alt="Modern luxury living room renovation by QSPACE Crafter"
         fill
         className="object-cover object-center"
         priority

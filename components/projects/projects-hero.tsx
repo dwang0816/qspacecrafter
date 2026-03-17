@@ -1,6 +1,6 @@
 export function ProjectsHero() {
   return (
-    <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
+    <section className="pt-32 pb-10 lg:pt-40 lg:pb-14">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-4xl">
           <p className="hero-animate hero-delay-1 text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
@@ -10,9 +10,8 @@ export function ProjectsHero() {
             Projects
           </h1>
           <p className="hero-animate hero-delay-3 text-muted-foreground text-lg lg:text-xl leading-relaxed max-w-2xl">
-            Every project tells a story of transformation. Explore our collection 
-            of bathroom remodels, kitchen renovations, full home makeovers, and 
-            exterior expansions across NYC and Long Island.
+            Every project tells a story of transformation. Explore our collection
+            of bathroom remodels, kitchen renovations, and full home makeovers.
           </p>
         </div>
       </div>

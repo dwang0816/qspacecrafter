@@ -1,12 +1,12 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
-// All 70 photos from gallery/photos — g056/g057/g058 are PNG, rest JPG
+// All 70 photos from public/gallery — g056/g057/g058 are PNG, rest JPG
 const galleryPhotos = Array.from({ length: 70 }, (_, i) => {
   const n = i + 1
   const num = String(n).padStart(3, "0")
   const ext = [56, 57, 58].includes(n) ? "png" : "jpg"
-  return `/gallery/photos/g${num}.${ext}`
+  return `/gallery/g${num}.${ext}`
 })
 
 // Also pull in the home photos for a cohesive full set
@@ -82,3 +82,4 @@ export function PhotoGallerySection() {
     </section>
   )
 }
+
