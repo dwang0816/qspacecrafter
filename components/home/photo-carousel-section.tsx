@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight, MoveHorizontal } from "lucide-react"
 const carouselPhotos = [
   { src: "/home/fullroom_long.png",          label: "Living Room"  },
   { src: "/gallery/g001.jpg",                label: "Bathroom"     },
-  { src: "/home/blue%20bathroom.PNG",        label: "Bathroom"     },
+  { src: "/home/blue%20bathroom.jpg",        label: "Bathroom"     },
   { src: "/gallery/g007.jpg",               label: "Shower"       },
   { src: "/home/kitchen.jpg",               label: "Kitchen"      },
   { src: "/gallery/g010.jpg",               label: "Kitchen"      },
@@ -23,7 +23,7 @@ const carouselPhotos = [
   { src: "/home/bathoom%20light%20mirror.jpg", label: "Vanity"    },
   { src: "/gallery/g044.jpg",               label: "Bathroom"     },
   { src: "/gallery/g052.jpg",               label: "Shower"       },
-  { src: "/gallery/g056.png",               label: "Terrace"      },
+  { src: "/gallery/g056.jpg",               label: "Terrace"      },
   { src: "/gallery/g059.jpg",               label: "Vanity"       },
   { src: "/gallery/g063.jpg",               label: "Kitchen"      },
   { src: "/gallery/g067.jpg",               label: "Staircase"    },

@@ -1,15 +1,15 @@
-// All 70 gallery photos (g056/g057/g058 are PNG, rest JPG)
+// All 70 gallery photos — g052 excluded (ultra-wide panoramic, renders as thin strip in column)
 const galleryPhotos = Array.from({ length: 70 }, (_, i) => {
   const n = i + 1
+  if (n === 52) return null
   const num = String(n).padStart(3, "0")
-  const ext = [56, 57, 58].includes(n) ? "png" : "jpg"
-  return `/gallery/g${num}.${ext}`
-})
+  return `/gallery/g${num}.jpg`
+}).filter(Boolean) as string[]
 
 // Home photos interleaved for visual variety
 const homePhotos = [
   "/home/fullroom_long.png",
-  "/home/blue%20bathroom.PNG",
+  "/home/blue%20bathroom.jpg",
   "/home/bathroom%20shower.jpg",
   "/home/bathroom%20shower%202.jpg",
   "/home/bathroom%20cabinet.jpg",
