@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
-          <div className="reveal lg:col-span-2">
+          <div className="lg:col-span-2">
             <h2 className="font-serif text-3xl lg:text-4xl mb-6">QSPACE CRAFTER</h2>
             <p className="text-primary-foreground/70 max-w-md leading-relaxed">
               Family-owned construction company serving NYC & Long Island. 

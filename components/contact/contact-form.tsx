@@ -33,7 +33,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="reveal bg-secondary p-8 lg:p-12">
+    <div className="bg-secondary p-8 lg:p-12">
       <h2 className="font-serif text-3xl lg:text-4xl mb-2">
         Get FREE Consultation
       </h2>

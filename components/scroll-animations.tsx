@@ -1,8 +1,11 @@
 "use client"
 
 import { useEffect } from "react"
+import { usePathname } from "next/navigation"
 
 export function ScrollAnimations() {
+  const pathname = usePathname()
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -13,15 +16,21 @@ export function ScrollAnimations() {
           }
         })
       },
-      { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     )
 
-    document.querySelectorAll(".reveal, .reveal-left").forEach((el) => {
-      observer.observe(el)
-    })
+    // Small delay lets the incoming page's DOM settle before we query it
+    const timer = setTimeout(() => {
+      document.querySelectorAll(".reveal, .reveal-left").forEach((el) => {
+        observer.observe(el)
+      })
+    }, 60)
 
-    return () => observer.disconnect()
-  }, [])
+    return () => {
+      clearTimeout(timer)
+      observer.disconnect()
+    }
+  }, [pathname])
 
   return null
 }
