@@ -1,10 +1,8 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/home/hero-section"
-import { DifferencesSection } from "@/components/home/differences-section"
-import { ServicesSection } from "@/components/home/services-section"
-import { ProjectTypesSection } from "@/components/home/project-types-section"
-import { ServiceAreasSection } from "@/components/home/service-areas-section"
+import { PhotoCarouselSection } from "@/components/home/photo-carousel-section"
+import { PhotoGallerySection } from "@/components/home/photo-gallery-section"
 
 export default function HomePage() {
   return (
@@ -12,10 +10,8 @@ export default function HomePage() {
       <Navigation />
       <main>
         <HeroSection />
-        <DifferencesSection />
-        <ServicesSection />
-        <ProjectTypesSection />
-        <ServiceAreasSection />
+        <PhotoCarouselSection />
+        <PhotoGallerySection />
       </main>
       <Footer />
     </>

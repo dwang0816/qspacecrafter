@@ -28,10 +28,10 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-14 lg:py-20">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="reveal max-w-3xl mb-16 lg:mb-24">
+        <div className="reveal max-w-3xl mb-10 lg:mb-14">
           <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
             From Start to Finish
           </p>

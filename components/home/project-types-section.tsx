@@ -30,10 +30,10 @@ const projectTypes = [
 
 export function ProjectTypesSection() {
   return (
-    <section className="py-24 lg:py-32 bg-primary text-primary-foreground">
+    <section className="py-14 lg:py-20 bg-primary text-primary-foreground">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="reveal max-w-3xl mb-16 lg:mb-24">
+        <div className="reveal max-w-3xl mb-10 lg:mb-14">
           <p className="text-sm tracking-[0.3em] uppercase text-primary-foreground/60 mb-4">
             What We Do
           </p>

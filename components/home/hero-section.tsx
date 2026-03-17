@@ -1,72 +1,64 @@
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 100px,
-            currentColor 100px,
-            currentColor 101px
-          ),
-          repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 100px,
-            currentColor 100px,
-            currentColor 101px
-          )`
-        }} />
-      </div>
+    <section className="relative h-screen w-full overflow-hidden">
+      {/* Full-screen background photo */}
+      <Image
+        src="/home/fullroom_long.png"
+        alt="Beautifully renovated interior space"
+        fill
+        className="object-cover object-center"
+        priority
+        quality={90}
+      />
 
-      <div className="container mx-auto px-6 lg:px-12 py-24 lg:py-32">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Eyebrow */}
-          <p className="hero-animate hero-delay-1 text-sm tracking-[0.3em] uppercase text-muted-foreground mb-8">
+      {/* Layered overlays for depth and legibility */}
+      <div className="absolute inset-0 bg-linear-to-b from-black/55 via-black/20 to-black/75" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/40 via-transparent to-transparent" />
+
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 h-full flex flex-col justify-center">
+        <div className="max-w-4xl">
+          <p className="hero-animate hero-delay-1 text-sm tracking-[0.3em] uppercase text-white/60 mb-8">
             Family-Owned Construction Company
           </p>
 
-          {/* Main Headline */}
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight mb-8">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight mb-8 text-white">
             <span className="hero-animate hero-delay-2 block">Renovate</span>
-            <span className="hero-animate hero-delay-3 block italic text-accent">NYC & LI</span>
+            <span className="hero-animate hero-delay-3 block italic text-amber-200">NYC & LI</span>
           </h1>
 
-          {/* Tagline */}
-          <p className="hero-animate hero-delay-4 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            Build Efficiently. Communicate Openly. Decades in, we know the work 
+          <p className="hero-animate hero-delay-4 text-lg md:text-xl text-white/75 max-w-2xl mb-12 leading-relaxed">
+            Build Efficiently. Communicate Openly. Decades in, we know the work
             and have the tools. Here to understand. Ready to deliver.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="hero-animate hero-delay-5 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
+          <div className="hero-animate hero-delay-5 flex flex-col sm:flex-row items-start gap-4">
+            <Link
               href="/contact"
-              className="btn-shimmer group inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-widest uppercase hover:bg-primary/90 transition-colors"
+              className="btn-shimmer group inline-flex items-center gap-3 px-8 py-4 bg-white text-foreground text-sm tracking-widest uppercase hover:bg-white/90 transition-colors"
             >
               Free Consultation
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link 
+            <Link
               href="/projects"
-              className="btn-shimmer inline-flex items-center gap-3 px-8 py-4 border border-primary text-primary text-sm tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="btn-shimmer inline-flex items-center gap-3 px-8 py-4 border border-white/50 text-white text-sm tracking-widest uppercase hover:bg-white/10 transition-colors"
             >
               View Projects
             </Link>
           </div>
         </div>
+      </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <span className="text-xs tracking-widest uppercase text-muted-foreground">Scroll</span>
-          <div className="w-px h-12 bg-border/40 relative overflow-hidden">
-            <div className="scroll-line absolute top-0 left-0 w-full h-1/2 bg-foreground" />
-          </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+        <span className="text-xs tracking-widest uppercase text-white/40">Scroll</span>
+        <div className="w-px h-12 bg-white/20 relative overflow-hidden">
+          <div className="scroll-line absolute top-0 left-0 w-full h-1/2 bg-white/70" />
         </div>
       </div>
     </section>
